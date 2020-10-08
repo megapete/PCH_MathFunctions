@@ -10,6 +10,9 @@
 		D3A0F0EE252E806D00D33D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0F0ED252E806D00D33D72 /* AppDelegate.swift */; };
 		D3A0F0F0252E806E00D33D72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A0F0EF252E806E00D33D72 /* Assets.xcassets */; };
 		D3A0F0F3252E806E00D33D72 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A0F0F1252E806E00D33D72 /* MainMenu.xib */; };
+		D3A0F0FE252E81D100D33D72 /* libgsl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A0F0FD252E81D100D33D72 /* libgsl.a */; };
+		D3A0F106252E830C00D33D72 /* PCH_EllipticalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0F105252E830C00D33D72 /* PCH_EllipticalFunctions.swift */; };
+		D3A0F109252E837E00D33D72 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0F108252E837E00D33D72 /* AppController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,10 @@
 		D3A0F0F2252E806E00D33D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D3A0F0F4252E806E00D33D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3A0F0F5252E806E00D33D72 /* PCH_MathFunctions.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PCH_MathFunctions.entitlements; sourceTree = "<group>"; };
+		D3A0F0FD252E81D100D33D72 /* libgsl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgsl.a; path = ../GNU_Scientific_Library/lib/libgsl.a; sourceTree = "<group>"; };
+		D3A0F100252E827400D33D72 /* PCH_MathFunctions-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PCH_MathFunctions-Bridging-Header.h"; sourceTree = "<group>"; };
+		D3A0F105252E830C00D33D72 /* PCH_EllipticalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCH_EllipticalFunctions.swift; sourceTree = "<group>"; };
+		D3A0F108252E837E00D33D72 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A0F0FE252E81D100D33D72 /* libgsl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +45,7 @@
 			children = (
 				D3A0F0EC252E806D00D33D72 /* PCH_MathFunctions */,
 				D3A0F0EB252E806D00D33D72 /* Products */,
+				D3A0F0FC252E81D100D33D72 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,12 +61,23 @@
 			isa = PBXGroup;
 			children = (
 				D3A0F0ED252E806D00D33D72 /* AppDelegate.swift */,
+				D3A0F108252E837E00D33D72 /* AppController.swift */,
+				D3A0F105252E830C00D33D72 /* PCH_EllipticalFunctions.swift */,
 				D3A0F0EF252E806E00D33D72 /* Assets.xcassets */,
 				D3A0F0F1252E806E00D33D72 /* MainMenu.xib */,
 				D3A0F0F4252E806E00D33D72 /* Info.plist */,
 				D3A0F0F5252E806E00D33D72 /* PCH_MathFunctions.entitlements */,
+				D3A0F100252E827400D33D72 /* PCH_MathFunctions-Bridging-Header.h */,
 			);
 			path = PCH_MathFunctions;
+			sourceTree = "<group>";
+		};
+		D3A0F0FC252E81D100D33D72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3A0F0FD252E81D100D33D72 /* libgsl.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +111,7 @@
 				TargetAttributes = {
 					D3A0F0E9252E806D00D33D72 = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -129,7 +150,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A0F106252E830C00D33D72 /* PCH_EllipticalFunctions.swift in Sources */,
 				D3A0F0EE252E806D00D33D72 /* AppDelegate.swift in Sources */,
+				D3A0F109252E837E00D33D72 /* AppController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,18 +290,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PCH_MathFunctions/PCH_MathFunctions.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = WPGZ62544B;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../GNU_Scientific_Library/include\"";
 				INFOPLIST_FILE = PCH_MathFunctions/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../GNU_Scientific_Library/lib\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.huberistech.PCH-MathFunctions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PCH_MathFunctions/PCH_MathFunctions-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -288,18 +316,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PCH_MathFunctions/PCH_MathFunctions.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = WPGZ62544B;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../GNU_Scientific_Library/include\"";
 				INFOPLIST_FILE = PCH_MathFunctions/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../GNU_Scientific_Library/lib\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.huberistech.PCH-MathFunctions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PCH_MathFunctions/PCH_MathFunctions-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
